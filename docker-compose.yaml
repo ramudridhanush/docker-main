@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile 
     container_name: front-end
     ports:
-      - "4173:4173"  
+      - "80:80"  
     environment:
       - REACT_APP_API_URL=http://back-end:5000  
     depends_on:
