@@ -1,0 +1,38 @@
+services:
+  front-end:
+    build:
+      context: ./frontend  
+      dockerfile: Dockerfile 
+    container_name: front-end
+    ports:
+      - "4173:4173"  
+    environment:
+      - REACT_APP_API_URL=http://back-end:5000  
+    depends_on:
+      - back-end
+ 
+  back-end:
+    build:
+      context: ./backend  
+      dockerfile: Dockerfile
+    container_name: back-end
+    ports:
+      - "5000:5000" 
+    environment:
+      - DATABASE_URL=mongodb+srv://dhanushr:ce8hxbv614RAEHrg@dummy.1i8x1.mongodb.net/?retryWrites=true&w=majority&appName=dummy
+    depends_on:
+      - mongo-db
+  
+  mongo-db:
+    image: mongo:latest
+    container_name: mongo-db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: dhanushr
+      MONGO_INITDB_ROOT_PASSWORD: ce8hxbv614RAEHrg
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:

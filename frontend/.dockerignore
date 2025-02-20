@@ -1,0 +1,57 @@
+# Ignore the node_modules folder
+
+node_modules/
+
+# Ignore log files
+
+\*.log
+
+# Ignore Dockerfile (if you don’t need it in the image)
+
+# Ignore all .git files and folders
+
+.git/
+
+# Ignore all system and IDE files (such as for VSCode, JetBrains, etc.)
+
+.vscode/
+.idea/
+_.swp
+_.swo
+
+# Ignore any environment variable files
+
+.env
+
+# Ignore test and coverage directories
+
+test/
+tests/
+coverage/
+
+# Ignore build and dist directories (if they exist)
+
+build/
+dist/
+
+# Ignore compiled files like .class, .pyc, .pyo, etc.
+
+_.class
+_.pyc
+_.pyo
+_.exe
+
+# Ignore temporary files
+
+_.bak
+_.tmp
+\*.swp
+
+# Ignore operating system files (macOS, Windows)
+
+.DS_Store
+Thumbs.db
+
+# Ignore files with sensitive data (use with caution)
+
+\*.pem
